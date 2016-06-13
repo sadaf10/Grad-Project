@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Database1" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database1.mdf;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="Database1ConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.DeleteFromIngredient" Method="DeleteFromIngredient">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.DeleteFromProcedure" Method="DeleteFromProcedure">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetAllIngredients" Method="GetAllIngredients">
+    <ElementType Name="GetAllIngredientsResult">
+      <Column Name="IngredientId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RecipeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Unit" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Ingredient" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetAllIngredientsforDelete" Method="GetAllIngredientsforDelete">
+    <Parameter Name="IngredientID" Parameter="ingredientID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetAllIngredientsforDeleteResult">
+      <Column Name="IngredientId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RecipeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Unit" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Ingredient" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetAllProcedures" Method="GetAllProcedures">
+    <ElementType Name="GetAllProceduresResult">
+      <Column Name="ProcedureId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RecipeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MyProcedure" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetIngredients" Method="GetIngredients">
+    <Parameter Name="Quantity" Parameter="quantity" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Unit" Parameter="unit" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Ingredients" Parameter="ingredients" Type="System.String" DbType="NVarChar(MAX)" />
+    <ElementType Name="GetIngredientsResult">
+      <Column Name="IngredientId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RecipeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Unit" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Ingredient" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetProcedures" Method="GetProcedures">
+    <Parameter Name="Procedures" Parameter="procedures" Type="System.String" DbType="NVarChar(MAX)" />
+    <ElementType Name="GetProceduresResult">
+      <Column Name="ProcedureId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RecipeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MyProcedure" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetRecipeID" Method="GetRecipeID">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetRecipeIDResult">
+      <Column Name="RecipeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RecipeName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Difficulty" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="RecipeType" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetRecipeIDfordelete" Method="GetRecipeIDfordelete">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetRecipeIDfordeleteResult">
+      <Column Name="RecipeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RecipeName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Difficulty" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="RecipeType" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetRecipeName" Method="GetRecipeName">
+    <Parameter Name="name" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="GetRecipeNameResult">
+      <Column Name="RecipeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RecipeName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Difficulty" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="RecipeType" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.InsertIntoIngredients" Method="InsertIntoIngredients">
+    <Parameter Name="RecipeID" Parameter="recipeID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Quantity" Parameter="quantity" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Unit" Parameter="unit" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Ingredients" Parameter="ingredients" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="id" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.InsertIntoProcedure" Method="InsertIntoProcedure">
+    <Parameter Name="RecipeID" Parameter="recipeID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Procedure" Parameter="procedure" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="id" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.InsertIntoRecipe" Method="InsertIntoRecipe">
+    <Parameter Name="RecipeName" Parameter="recipeName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Difficulty" Parameter="difficulty" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="RecipeType" Parameter="recipeType" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Comment" Parameter="comment" Type="System.String" DbType="NVarChar(MAX)" />
+    <ElementType Name="InsertIntoRecipeResult">
+      <Column Name="RecipeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.InsertItoImage" Method="InsertItoImage">
+    <Parameter Name="image" Type="System.Data.Linq.Binary" DbType="Image" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.mainProcedure" Method="mainProcedure">
+    <Parameter Name="recipeName" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="recipeType" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="quantity" Type="System.Int32" DbType="Int" />
+    <Parameter Name="unit" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="procedureId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="mainProcedureResult">
+      <Column Name="RecipeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetIngredientsbyRecipeID" Method="GetIngredientsbyRecipeID">
+    <Parameter Name="RecipeID" Parameter="recipeID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetIngredientsbyRecipeIDResult">
+      <Column Name="IngredientId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RecipeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Unit" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Ingredient" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.InsertIntoMyRecipe" Method="InsertIntoMyRecipe">
+    <Parameter Name="IngredientID" Parameter="ingredientID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="procedureID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="recipeID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="recipeName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="recipeType" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="InsertIntoMyRecipeResult">
+      <Column Name="RecipeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RecipeName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RecipeType" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IngredientID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProcedureId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.DeleteTotalrecipe" Method="DeleteTotalrecipe">
+    <Parameter Name="ingredientID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="procedureID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="recipeID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetProcedureID" Method="GetProcedureID">
+    <Parameter Name="RecipeId" Parameter="recipeId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetProcedureIDResult">
+      <Column Name="ProcedureId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RecipeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MyProcedure" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetIngredientID" Method="GetIngredientID">
+    <Parameter Name="RecipeId" Parameter="recipeId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetIngredientIDResult">
+      <Column Name="IngredientId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.DelteFromRecipe" Method="DelteFromRecipe">
+    <Parameter Name="recipeID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetAllRecipe" Method="GetAllRecipe">
+    <Parameter Name="recipename" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="recipetype" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="GetAllRecipeResult">
+      <Column Name="RecipeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RecipeName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RecipeType" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="difficulty" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetRecipeIngredients" Method="GetRecipeIngredients">
+    <Parameter Name="RecipeID" Parameter="recipeID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetRecipeIngredientsResult">
+      <Column Name="Ingredient" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Unit" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.InsertAdditionalIngredient" Method="InsertAdditionalIngredient">
+    <Parameter Name="ingredient" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="unit" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="quantity" Type="System.Int32" DbType="Int" />
+    <Parameter Name="recipeid" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetRecipeInfo" Method="GetRecipeInfo">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetRecipeInfoResult">
+      <Column Name="RecipeName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RecipeType" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Difficulty" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UpdateRecipeInfo" Method="UpdateRecipeInfo">
+    <Parameter Name="recipename" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="recipetype" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="difficulty" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="comment" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="recipeid" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.InsertAdditionalProcedure" Method="InsertAdditionalProcedure">
+    <Parameter Name="myprocedure" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="recipeid" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetRecipeProcedures" Method="GetRecipeProcedures">
+    <Parameter Name="RecipeID" Parameter="recipeID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetRecipeProceduresResult">
+      <Column Name="ProcedureId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MyProcedure" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.DeleteFromAddedIngredient" Method="DeleteFromAddedIngredient">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.DeleteFromaddedProcedure" Method="DeleteFromaddedProcedure">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetRecipeIngredientsResult" Method="GetRecipeIngredientsResult">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetRecipeIngredientsResultResult">
+      <Column Name="Ingredient" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Unit" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetRecipeIngredient" Method="GetRecipeIngredient">
+    <Parameter Name="RecipeID" Parameter="recipeID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetRecipeIngredientResult">
+      <Column Name="Ingredient" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Unit" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IngredientId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>
